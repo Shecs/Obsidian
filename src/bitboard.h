@@ -15,7 +15,7 @@ inline Square popLsb(Bitboard& bbPtr) {
 }
 
 inline Bitboard getLsb_bb(Bitboard bb) {
-  return bb & (-int64_t(bb));
+  return bb & -bb;
 }
 
 inline Bitboard squareBB(Square sq) {

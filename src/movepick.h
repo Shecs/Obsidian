@@ -64,11 +64,10 @@ private:
 
   Stage stage;
 
-  MoveList captures;
-  MoveList quiets;
-  MoveList badCaptures;
+  MoveList moves;
 
-  int capIndex = 0, quietIndex = 0, badCapIndex = 0;
+  int capIndex = 0, badCapIndex = 0, quietIndex = 0;
+  int capCount = 0, badCapCount = 0;
 
   void scoreCaptures();
 

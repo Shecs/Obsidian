@@ -14,13 +14,13 @@ void positionInit() {
   for (Square sq = SQ_A1; sq <= SQ_H8; ++sq)
     ROOK_SQR_TO_CR[sq] = ALL_CASTLING;
 
-  ROOK_SQR_TO_CR[SQ_A1] = ~WHITE_OOO;
-  ROOK_SQR_TO_CR[SQ_H1] = ~WHITE_OO;
-  ROOK_SQR_TO_CR[SQ_A8] = ~BLACK_OOO;
-  ROOK_SQR_TO_CR[SQ_H8] = ~BLACK_OO;
+  ROOK_SQR_TO_CR[SQ_A1] &= ~WHITE_OOO;
+  ROOK_SQR_TO_CR[SQ_H1] &= ~WHITE_OO;
+  ROOK_SQR_TO_CR[SQ_A8] &= ~BLACK_OOO;
+  ROOK_SQR_TO_CR[SQ_H8] &= ~BLACK_OO;
 
-  ROOK_SQR_TO_CR[SQ_E1] = ~WHITE_CASTLING;
-  ROOK_SQR_TO_CR[SQ_E8] = ~BLACK_CASTLING;
+  ROOK_SQR_TO_CR[SQ_E1] &= ~WHITE_CASTLING;
+  ROOK_SQR_TO_CR[SQ_E8] &= ~BLACK_CASTLING;
 }
 
 Bitboard Position::attackersTo(Square s, Bitboard occupied) const {
